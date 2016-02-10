@@ -12,3 +12,9 @@ textarea, .textarea {
     height:                 500px;
     padding:                20px;
 }
+
+
+#addJquery_success {
+    display:                none;
+
+}

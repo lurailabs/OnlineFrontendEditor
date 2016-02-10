@@ -29,9 +29,9 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container">
+<!--<div class="container">-->
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
 
             <!-- Nav tabs -->
             <ul id="myTabs" class="nav nav-tabs" role="tablist">
@@ -44,6 +44,9 @@
                 </li>
                 <li role="presentation">
                     <a href="#js" aria-controls="js" role="tab" data-toggle="tab">JavaScript</a>
+                </li>
+                <li role="presentation" class="pull-right">
+                    <a href="#libraries" aria-controls="libraries" role="tab" data-toggle="tab">ADD LIBRARIES</a>
                 </li>
 
             </ul> <!-- nav-tabs -->
@@ -64,25 +67,56 @@
                 </div> <!-- javascript tab -->
 
                 <div id="libraries" role="tabpanel" class="tab-pane">
-                    <p class="textarea">Add libraries:</p>
+                    <div class="textarea">
+                        <h4>Add libraries:</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span id="addJquery_success" class="label label-success pull-right">added</span>
+                                <button id="addJquery" type="button" class="btn btn-primary btn-xs pull-right">add</button>
+                                jQuery v1.12.0
+                            </li> <!-- add jQuery -->
+
+                            <li id="JslibraryLi" class="list-group-item">
+                                <h4>Other JavaScript libraries:</h4>
+                                <div class="input-group">
+                                    <span class="input-group-addon">url</span>
+                                    <input id="JsLibraryUrl" type="text" class="form-control" placeholder="paste library CDN url" aria-describedby="basic-addon1">
+                                    <span class="input-group-btn">
+                                        <button id="addJsLibrary" class="btn btn-default" type="button">Add</button>
+                                    </span>
+                                </div>
+                            </li>  <!-- add Js Library -->
+
+                            <li id="CsslibraryLi" class="list-group-item">
+                                <h4>CSS libraries:</h4>
+                                <div class="input-group">
+                                    <span class="input-group-addon">url</span>
+                                    <input id="CssLibraryUrl" type="text" class="form-control" placeholder="paste library CDN url" aria-describedby="basic-addon1">
+                                    <span class="input-group-btn">
+                                        <button id="addCssLibrary" class="btn btn-default" type="button">Add</button>
+                                    </span>
+                                </div>
+                            </li>  <!-- add CSS Library -->
+                        </ul>
+                    </div>
                 </div> <!-- javascript tab -->
 
             </div> <!-- tab-content -->
             <button id="run" class="btn btn-primary pull-right">RUN</button>
 
-        </div> <!-- col-md-6 -->
+        </div> <!-- col-md-5 -->
 
 
-        <div class="col-md-6">
+        <div class="col-md-7">
 
             <h4>Code in action</h4>
             <iframe id="display" name="display"></iframe>
 
-        </div> <!-- col-md-6 -->
+        </div> <!-- col-md-7 -->
 
     </div> <!-- row -->
 
-</div> <!-- container -->
+<!--</div> &lt;!&ndash; container &ndash;&gt;-->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

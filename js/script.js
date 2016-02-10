@@ -31,13 +31,61 @@ function Display() {
     };
 }
 
+
+var libraries = {
+    jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js',
+
+    addJs: function(cdn) {
+        var frame       = $('#display').get(0);
+        var script      = frame.contentWindow.document.createElement('script');
+        script.setAttribute('src', cdn);
+        frame.contentWindow.document.head.appendChild(script);
+    },
+
+    addCss: function(cdn) {
+        var frame       = $('#display').get(0);
+        var linkNode    = frame.contentWindow.document.createElement('link');
+        linkNode.setAttribute('rel', 'stylesheet');
+        linkNode.setAttribute('href', cdn);
+        frame.contentWindow.document.head.appendChild(linkNode);
+    }
+};
+
+
+
 (function() {
 
-    var display     = new Display();
-    var runButton   = $('#run');
+    var display             = new Display();
+    var $runBtn             = $('#run');
+    var $addJqueryBtn       = $('#addJquery');
+    var $addJsLibraryBtn    = $('#addJsLibrary');
+    var $addCssLibraryBtn   = $('#addCssLibrary');
+    var span                = '<span class="label label-success pull-right">added</span>';
 
-    runButton.click(function update() {
+    $runBtn.click(function() {
         display.update();
+    });
+
+    $addJqueryBtn.click(function() {
+        libraries.addJs( libraries.jquery);
+        $addJqueryBtn.css('display', 'none');
+        $('#addJquery_success').css('display', 'inline');
+    });
+
+    $addJsLibraryBtn.click(function() {
+        var libraryUrl = $('#JsLibraryUrl').val();
+        libraries.addJs(libraryUrl);
+        var libraryName =  libraryUrl.substring(libraryUrl.lastIndexOf('/') + 1);
+        var newLibraryNode = $('<li class="list-group-item">' + span + libraryName + '</li>');
+        newLibraryNode.insertBefore($('#JslibraryLi'));
+    });
+
+    $addCssLibraryBtn.click(function() {
+        var libraryUrl = $('#CssLibraryUrl').val();
+        libraries.addCss(libraryUrl);
+        var libraryName =  libraryUrl.substring(libraryUrl.lastIndexOf('/') + 1);
+        var newLibraryNode = $('<li class="list-group-item">' + span + libraryName + '</li>');
+        newLibraryNode.insertAfter($('#CsslibraryLi'));
     });
 
 }());
