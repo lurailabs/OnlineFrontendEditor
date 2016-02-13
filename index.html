@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Online HTML, CSS and JavaScript Editor - LuraiLabs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/editor.css">
 </head>
 
@@ -13,7 +15,7 @@
 <div id="header" class="ui-layout-north">
     <h1>HTML, CSS and JavaScript Editor</h1>
     <ul>
-        <li><button id="runBtn">RUN CODE</button></li>
+        <li><button id="runBtn"><i class="fa fa-play"></i> RUN</button></li>
         <li><button id="librariesBtn">ADD LIBRARIES</button></li>
     </ul>
 </div>
@@ -26,15 +28,15 @@
 <div id="code" class="ui-layout-west">
     <div id="code-navbar">
         <ul>
-               <li><button class="code-navbar-btn">HTML</button></li><!--
-            --><li><button class="code-navbar-btn active">CSS</button></li><!--
-            --><li><button class="code-navbar-btn active">JAVASCRIPT</button></li>
+               <li><button class="code-navbar-btn active" name="html">HTML</button></li><!--
+            --><li><button class="code-navbar-btn active" name="css">CSS</button></li><!--
+            --><li><button class="code-navbar-btn active" name="js">JAVASCRIPT</button></li>
         </ul>
     </div> <!-- /code-navbar -->
 
-    <div id="htmlCode"><textarea></textarea></div>
-    <div id="cssCode"><textarea></textarea></div>
-    <div id="jsCode"><textarea></textarea></div>
+    <div id="htmlCode" class="codeDiv"><textarea></textarea></div>
+    <div id="cssCode" class="codeDiv"><textarea></textarea></div>
+    <div id="jsCode" class="codeDiv"><textarea></textarea></div>
 
 </div> <!-- /code-->
 
@@ -43,31 +45,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-layout/1.4.3/jquery.layout.min.js"></script>
-<script src="js/display.js"></script>
+<script src="js/compiler.js"></script>
+<script src="js/codePanel.js"></script>
 <script src="js/script.js"></script>
-
-<script>
-    $(document).ready(function () {
-
-        $('body').layout({
-            north__size:                    65
-            , north__enableCursorHotkey:    false
-            , north__closable:              false
-            , north__resizable:             false
-            , north__spacing_open:          0
-            , north__spacing_close:         0
-            , west__size:                   400
-            , west__spacing_closed:         20
-            , west__togglerLength_closed:   100
-            , west__togglerAlign_closed:    "center"
-            , west__togglerContent_closed:  "S<BR>H<BR>O<BR>W"
-            , west__togglerTip_closed:      "show code"
-            , west__sliderTip:              "slide open code"
-            , west__slideTrigger_open:      "mouseover"
-            , center__maskContents: true // IMPORTANT - enable iframe masking
-        });
-    });
-</script>
 
 
 </html>
