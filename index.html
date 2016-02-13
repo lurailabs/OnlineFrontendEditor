@@ -11,7 +11,7 @@
 <body>
 
 <div id="header" class="ui-layout-north">
-    <h1>HTML, CSS y JS online editor</h1>
+    <h1>HTML, CSS and JavaScript Editor</h1>
     <ul>
         <li><button id="runBtn">RUN CODE</button></li>
         <li><button id="librariesBtn">ADD LIBRARIES</button></li>
@@ -19,75 +19,38 @@
 </div>
 
 <iframe id="output" name="output" class="ui-layout-center"
-        width="100%" height="600" frameborder="0" scrolling="auto"
-></iframe>
+        width="100%" height="600" frameborder="0" scrolling="auto">
+</iframe>
 
 
 <div id="code" class="ui-layout-west">
+    <div id="code-navbar">
+        <ul>
+               <li><button class="code-navbar-btn">HTML</button></li><!--
+            --><li><button class="code-navbar-btn active">CSS</button></li><!--
+            --><li><button class="code-navbar-btn active">JAVASCRIPT</button></li>
+        </ul>
+    </div> <!-- /code-navbar -->
 
-    <div id="html" class="ui-layout-north">
-        <textarea id="htmlCode"></textarea>
-    </div>
-
-    <div id="css" class="ui-layout-center">
-        <textarea id="cssCode"></textarea>
-    </div>
-
-    <div id="js" class="ui-layout-south">
-        <textarea id="jsCode"></textarea>
-    </div>
+    <div id="htmlCode"><textarea></textarea></div>
+    <div id="cssCode"><textarea></textarea></div>
+    <div id="jsCode"><textarea></textarea></div>
 
 </div> <!-- /code-->
-
-<!--
-  <div id="libraries" role="tabpanel" class="tab-pane">
-    <div class="textarea">
-        <h4>Add libraries:</h4>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <span id="addJquery_success" class="label label-success pull-right">added</span>
-                <button id="addJquery" type="button" class="btn btn-primary btn-xs pull-right">add</button>
-                jQuery v1.12.0
-            </li> 
-
-            <li id="JslibraryLi" class="list-group-item">
-                <h4>Other JavaScript libraries:</h4>
-                <div class="input-group">
-                    <span class="input-group-addon">url</span>
-                    <input id="JsLibraryUrl" type="text" class="form-control" placeholder="paste library CDN url" aria-describedby="basic-addon1">
-                    <span class="input-group-btn">
-                        <button id="addJsLibrary" class="btn btn-default" type="button">Add</button>
-                    </span>
-                </div>
-            </li>  
-
-            <li id="CsslibraryLi" class="list-group-item">
-                <h4>CSS libraries:</h4>
-                <div class="input-group">
-                    <span class="input-group-addon">url</span>
-                    <input id="CssLibraryUrl" type="text" class="form-control" placeholder="paste library CDN url" aria-describedby="basic-addon1">
-                    <span class="input-group-btn">
-                        <button id="addCssLibrary" class="btn btn-default" type="button">Add</button>
-                    </span>
-                </div>
-            </li>  
-        </ul>
-    </div>
-  </div> 
-  -->
 
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-layout/1.4.3/jquery.layout.min.js"></script>
+<script src="js/display.js"></script>
 <script src="js/script.js"></script>
 
 <script>
     $(document).ready(function () {
 
-        var hLayout = $('body').layout({
-            north__size:                    50
+        $('body').layout({
+            north__size:                    65
             , north__enableCursorHotkey:    false
             , north__closable:              false
             , north__resizable:             false
@@ -103,18 +66,6 @@
             , west__slideTrigger_open:      "mouseover"
             , center__maskContents: true // IMPORTANT - enable iframe masking
         });
-
-        var vLayout = $('#code').layout({
-            north__size:                        200
-            , north__spacing_closed:            20
-            , north__togglerContent_closed:     "HTML"
-            , center__spacing_closed:           20
-            , center__togglerContent_closed:    "CSS"
-            , south__size:                      200
-            , south__spacing_closed:            20
-            , south__togglerContent_closed:     "CSS"
-        });
-
     });
 </script>
 

@@ -3,12 +3,9 @@ body {
     font-family:            Geneva, Arial, Helvetica, sans-serif;
 }
 
-.ui-layout-pane { /* all 'panes' */
-    border:                 1px solid #BBB;
-}
+/************************* HEADER ********************************/
 
-#header { /* north pane */
-    font-size:              0.8em;
+#header {                           /* north pane */
     padding:                0 10px;
     background-color:       white !important;
     overflow:               auto;
@@ -16,20 +13,48 @@ body {
 
 #header > h1 {
     display:                inline-block;
+    margin:                 15px 60px 0 30px;
+    color:                  #949494;
+    font-size:              19px;
 }
 
 #header > ul {
     display:                inline-block;
     list-style-type:        none;
-    margin:                 0;
     padding:                0;
 }
 
 #header li {
-    display:                inline;
+    display:                inline-block;
 }
 
-.ui-layout-pane-center { /* IFRAME pane */
+#header button {
+    margin:                 0 20px 0 0;
+    background-color:       #77b55a;
+    border-radius:          4px;
+    border:1px solid        #4b8f29;
+    /*display:                inline-block;*/
+    cursor:                 pointer;
+    color:                  #ffffff;
+    font-size:              12px;
+    font-weight:            bold;
+    padding:                4px 12px;
+    text-decoration:        none;
+    text-shadow:            0 1px 0 #5b8a3c;
+}
+
+#header #librariesBtn {
+    background-color: #5c8cb5;
+}
+
+
+/************************* LAYOUT PANELS **************************/
+
+.ui-layout-pane {                   /* all 'panes' */
+    border:                 1px solid #BBB;
+}
+
+.ui-layout-pane-center {            /* IFRAME pane */
     padding:                0;
     margin:                 0;
 }
@@ -40,28 +65,28 @@ body {
     overflow:               auto;
 }
 
-.ui-layout-resizer { /* all 'resizer-bars' */
+.ui-layout-resizer {                /* all 'resizer-bars' */
     background:             #DDD;
 }
 
-.ui-layout-resizer-open:hover { /* mouse-over */
+.ui-layout-resizer-open:hover {     /* mouse-over */
     background:             #9D9;
 }
 
-.ui-layout-toggler { /* all 'toggler-buttons' */
+.ui-layout-toggler {                /* all 'toggler-buttons' */
     background:             #AAA;
 }
 
-.ui-layout-toggler-closed { /* closed toggler-button */
+.ui-layout-toggler-closed {         /* closed toggler-button */
     background:             #CCC;
     border-bottom:          1px solid #BBB;
 }
 
-.ui-layout-toggler .content { /* toggler-text */
+.ui-layout-toggler .content {       /* toggler-text */
     font:                   14px bold Verdana, Verdana, Arial, Helvetica, sans-serif;
 }
 
-.ui-layout-toggler:hover { /* mouse-over */
+.ui-layout-toggler:hover {          /* mouse-over */
     background:             #DCA;
 }
 
@@ -76,10 +101,82 @@ body {
     filter:                 alpha(opacity=20) !important;
 }
 
-textarea {
+
+/************************* CODE NAVBAR ****************************/
+
+#code-navbar ul {
+    display:                inline-block;
+    list-style-type:        none;
+    margin:                 0;
+    padding:                0;
+    float:                  right;
+}
+
+#code-navbar li {
+    display:                inline;
+}
+
+.code-navbar-btn {
+    background-color:       #eee;
+    color:                  #9c9c9c;
+    display:                inline-block;
+    cursor:                 pointer;
+    font-size:              11px;
+    font-weight:            bold;
+    text-decoration:        none;
+    text-shadow:            0 1px 0 #ced9bf;
+    padding:                3px 10px;
+    border-left:            solid 1px white;
+    border-right:           0;
+    border-bottom:          solid 1px gray;
+}
+
+.code-navbar-btn.active {
+    background-color:       #dce6ef;
+    color:                  #4183c4;
+}
+
+
+/********************** CODE BOXES ***************************/
+
+#code :nth-child(2) {       /* first child is navbar, this is upper code box */
+    margin-top:             22px;    /* space for code-navbar */
+}
+#htmlCode, #cssCode, #jsCode {
+    width:                  100%;
+    height:                 31%;
     background-color:       #f5f5ef;
+    border-bottom:          1px solid white;
+}
+
+#htmlCode:hover, #cssCode:hover, #jsCode:hover {
+    background-color:       #F7F7F1;
+}
+
+#htmlCode::before, #cssCode::before, #jsCode::before {
+    position:               absolute;
+    right:                  40px;
+    margin-top:             20px;
+    color:                  #DCDCDC;
+}
+
+#htmlCode::before {
+    content:                "HTML";
+}
+
+#cssCode::before {
+    content:                "CSS";
+}
+
+#jsCode::before {
+    content:                "JAVASCRIPT";
+}
+
+textarea {
+    background-color:       transparent;
     width:                  100%;
     height:                 100%;
+    padding:                15px;
     box-sizing:             border-box;
     outline:                none;
     resize:                 none;
