@@ -1,0 +1,25 @@
+{
+  "html": ["&lt;div class=&quot;ajedrez&quot;&gt;&lt;/div&gt"],
+
+  "css": [".ajedrez {",
+    "background: black;",
+    "height: 10px;",
+    "width: 10px;",
+    "",
+    "box-shadow: 10px 0 red,",
+    "20px 0 black,",
+    "30px 0 red,",
+    "0 10px red,",
+    "10px 10px black,",
+    "20px 10px red,",
+    "30px 10px black,",
+    "0 20px black,",
+    "10px 20px red,",
+    "20px 20px black,",
+    "30px 20px red,",
+    "0 30px red,",
+    "10px 30px black,",
+    "20px 30px red,",
+    "30px 30px black;",
+    "}"]
+}

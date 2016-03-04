@@ -143,6 +143,7 @@ body {
 #code :nth-child(2) {       /* first child is navbar, this is upper code box */
     /*margin-top:             22px;    !* space for code-navbar *!*/
 }
+
 #htmlCode, #cssCode, #jsCode {
     width:                  100%;
     height:                 31%;
@@ -161,20 +162,22 @@ body {
     color:                  #DCDCDC;
 }
 
-#htmlCode::before {
+
+#htmlCode:not(:hover)::before {
     content:                "HTML";
 }
 
-#cssCode::before {
+#cssCode:not(:hover)::before {
     content:                "CSS";
 }
 
-#jsCode::before {
+#jsCode:not(:hover)::before {
     content:                "JAVASCRIPT";
 }
 
 textarea {
     background-color:       transparent;
+    font-family:            monaco, monospace;
     width:                  100%;
     height:                 100%;
     padding:                15px;

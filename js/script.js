@@ -24,8 +24,12 @@
         , center__maskContents: true // IMPORTANT - enable iframe masking
     });
 
+    /** tart editor **/
+
     var compiler     = new Compiler();
     var codePanel   = new CodePanel();
+
+    loadCode("1_box-shadow");
 
     /** Events **/
 
